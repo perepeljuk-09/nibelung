@@ -1,10 +1,15 @@
 import './App.scss';
+import {Route, Routes, Navigate} from "react-router-dom";
+import {LoginPage} from "./components/LoginPage"
 
 function App() {
   return (
     <div className="App">
-        <header className="App__header">ЗАГАЛОВОК</header>
-      <h1>FONRMOPPFPODFM</h1>
+        <Routes>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/*" element={<Navigate to="/login"/>}/>
+            {/*<Route to="/register"/>*/}
+        </Routes>
     </div>
   );
 }
